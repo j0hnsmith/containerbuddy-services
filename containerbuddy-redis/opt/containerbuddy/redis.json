@@ -1,0 +1,14 @@
+{
+  "consul": "consul:8500",
+  "services": [
+    {
+      "name": "redis_{{.ENV_NAME}}",
+      "port": 6379,
+      "interfaces": ["eth0"],
+      "health": "redis-cli ping",
+      "poll": 10,
+      "ttl": 25
+    }
+  ],
+  "backends": []
+}
