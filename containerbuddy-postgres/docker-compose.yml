@@ -1,0 +1,10 @@
+postgres:
+    image: j0hnsmith/containerbuddy-postgres:latest
+    expose:
+        - "5432"
+    environment:
+        POSTGRES_USER: "default_user"
+        POSTGRES_DB: "db_name"
+        POSTGRES_PASSWORD: "password"
+    extra_hosts:
+        - "consul:${CONSUL_HOST}"
