@@ -1,0 +1,8 @@
+redis:
+    image: j0hnsmith/containerbuddy-redis:latest
+    ports:
+        - "6379"
+    environment:
+        ENV_NAME: ${ENV_NAME}
+    extra_hosts:
+        - "consul:${CONSUL_HOST}"
