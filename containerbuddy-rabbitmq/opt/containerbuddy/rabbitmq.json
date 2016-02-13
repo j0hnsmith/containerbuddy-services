@@ -1,0 +1,14 @@
+{
+  "consul": "consul:8500",
+  "services": [
+    {
+      "name": "rabbitmq_{{.ENV_NAME}}",
+      "port": 5672,
+      "interfaces": ["eth0"],
+      "health": "echo >/dev/tcp/127.0.0.1/5672",
+      "poll": 10,
+      "ttl": 25
+    }
+  ],
+  "backends": []
+}
