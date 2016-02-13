@@ -1,0 +1,12 @@
+mysql:
+    image: j0hnsmith/containerbuddy-mysql:latest
+    ports:
+        - "3306"
+    environment:
+        ENV_NAME: ${ENV_NAME}
+        MYSQL_ROOT_PASSWORD: "root_user"
+        MYSQL_USER: "default_user"
+        MYSQL_DATABASE: "db_name"
+        MYSQL_PASSWORD: "password"
+    extra_hosts:
+        - "consul:${CONSUL_HOST}"
