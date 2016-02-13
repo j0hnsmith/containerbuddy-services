@@ -1,0 +1,9 @@
+rabbitmq:
+    image: j0hnsmith/containerbuddy-rabbitmq:latest
+    ports:
+        - "5672"
+        - "15672"
+    environment:
+        ENV_NAME: ${ENV_NAME}
+    extra_hosts:
+        - "consul:${CONSUL_HOST}"
